@@ -3,6 +3,9 @@ var config = require('./config'),
     ElizaBot = require('./elizabot'),
     urlParse = require('url').parse;
 
+if (config.DAEMON)
+	require('daemon').daemonize({stdout: 'msg.log'}, 'irabu.pid');
+
 var BOTS = {};
 var TIMEOUT = 60 * 60 * 1000;
 
