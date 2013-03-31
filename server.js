@@ -69,8 +69,6 @@ app.use(function (req, resp, next) {
 			resp.end("Bad request.");
 			return;
 		}
-		if (msg.match(/dump/))
-			console.log(bot);
 		respond(msg, id, function (err, msg) {
 			if (err)
 				msg = {msg: err, col: 'red'};
